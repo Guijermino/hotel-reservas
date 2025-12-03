@@ -1,30 +1,29 @@
 Sistema de Reservas de Hotel
-Descrição do Projeto
 
-Este projeto foi desenvolvido para a disciplina de Técnicas de Orientação a Objetos (TOO).
-Ele representa um sistema simples de gerenciamento de reservas em um hotel, permitindo cadastrar hóspedes, quartos e gerar reservas com cálculo automático do valor total.
+Este projeto implementa um sistema de gerenciamento de reservas utilizando Programação Orientada a Objetos (POO) e padrões de projeto. Ele foi desenvolvido para a disciplina Técnicas de Orientação a Objetos (TOO).
 
-A proposta do trabalho é demonstrar, na prática, os pilares da Programação Orientada a Objetos e a aplicação de dois padrões de projeto: Factory Method e Singleton.
+1. Objetivos do Projeto
 
-Funcionalidades do Sistema
+Aplicar os pilares da Programação Orientada a Objetos
 
-Cadastro de quartos
+Implementar padrões de projeto (Factory Method e Singleton)
 
-Cadastro de hóspedes
+Simular o fluxo de funcionamento de um hotel
 
-Criação de reservas
+Organizar o código seguindo boas práticas de modularização
 
-Cálculo automático do valor total da estadia
+2. Tecnologias Utilizadas
 
-Tipos diferentes de quartos, cada um com seu próprio cálculo de diária
+Python 3.x
 
-Utilização dos padrões de projeto Singleton e Factory
+POO (Programação Orientada a Objetos)
 
-Estrutura do Projeto
+UML
+
+3. Arquitetura do Sistema
 hotel-reservas/
 │
 ├── main.py
-├── README.md
 │
 ├── core/
 │   └── Hotel.py
@@ -33,55 +32,65 @@ hotel-reservas/
 │   ├── Quarto.py
 │   ├── QuartoSimples.py
 │   ├── QuartoDuplo.py
-│   ├── QuartoLuxo.py
+│   ├── QuartoDeLuxo.py
 │   ├── Suite.py
 │   ├── Hospede.py
 │   └── Reserva.py
 │
 └── FabricaQuartos.py
 
-Pilares da Programação Orientada a Objetos
-1. Abstração
+4. Pilares da POO
+4.1 Abstração
 
-A classe Quarto representa um modelo genérico de quarto, definindo atributos essenciais e o método abstrato calcular_diaria().
+A classe Quarto representa um modelo genérico para qualquer tipo de quarto.
 
-2. Encapsulamento
+4.2 Encapsulamento
 
-Os atributos e métodos relacionados a cada entidade (quarto, hóspede, reserva, etc.) estão encapsulados em suas respectivas classes.
+Cada classe concentra seus atributos e métodos internos, organizando melhor a lógica do sistema.
 
-3. Herança
+4.3 Herança
 
-Os tipos de quarto (QuartoSimples, QuartoDuplo, QuartoLuxo e Suite) herdam da classe Quarto, reutilizando código e características comuns.
+Os tipos de quartos (QuartoSimples, QuartoDuplo, QuartoDeLuxo, Suite) herdam de Quarto.
 
-4. Polimorfismo
+4.4 Polimorfismo
 
-Cada tipo de quarto implementa sua própria versão do método calcular_diaria(), alterando o comportamento conforme necessário.
+Cada tipo de quarto implementa sua própria versão de calcular_diaria().
 
-Padrões de Projeto Utilizados
-Factory Method
+5. Padrões de Projeto
+5.1 Singleton – Classe Hotel
 
-A classe FabricaQuartos é responsável por criar instâncias de quartos com base no tipo informado.
-Isso organiza a criação de objetos e facilita a expansão do sistema.
+Garante que apenas uma instância da classe Hotel seja criada.
 
-Singleton
+hotel = Hotel.obter_instancia()
 
-A classe Hotel utiliza o padrão Singleton para garantir que apenas uma instância do hotel exista durante toda a execução do sistema.
-Tudo é centralizado em um único objeto gerenciador.
+5.2 Factory Method – FabricaQuartos
 
-Como Executar o Projeto
+Responsável por criar objetos do tipo Quarto a partir de uma string:
 
-Certifique-se de ter o Python instalado.
+quarto = FabricaQuartos.criar_quarto("luxo", 301)
 
-Abra o terminal na pasta raiz do projeto.
+6. Diagrama UML
 
-Execute o comando:
+Caso adicione a imagem ao repositório, use:
+
+![Diagrama UML](uml.png)
+
+7. Como Executar
+7.1 Pré-requisitos
+
+Python 3 instalado
+
+7.2 Execução
+
+No terminal, dentro da pasta do projeto:
 
 python main.py
 
+8. Exemplo de Saída
+Reserva criada com sucesso.
+Reserva #1 - Hóspede: Guilherme - Quarto 301 - Total: R$ 550.00
 
-O sistema irá gerar automaticamente uma reserva de teste e exibir o valor total calculado.
-
-Autor
+9. Autor
 
 Guilherme Guimarães Audibert
 Ciência da Computação – 3º Semestre
