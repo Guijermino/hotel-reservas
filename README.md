@@ -22,22 +22,16 @@ UML
 
 3. Arquitetura do Sistema
 hotel-reservas/
-│
-├── main.py
-│
-├── core/
-│   └── Hotel.py
-│
 ├── model/
 │   ├── Quarto.py
 │   ├── QuartoSimples.py
-│   ├── QuartoDuplo.py
+│   ├── QuartoBase.py
 │   ├── QuartoDeLuxo.py
 │   ├── Suite.py
 │   ├── Hospede.py
-│   └── Reserva.py
+│   └── Hotel.py
 │
-└── FabricaQuartos.py
+└── teste.py
 
 4. Pilares da POO
 4.1 Abstração
