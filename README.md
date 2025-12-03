@@ -63,26 +63,22 @@ Responsável por criar objetos do tipo Quarto a partir de uma string:
 
 quarto = FabricaQuartos.criar_quarto("luxo", 301)
 
-6. Diagrama UML
-
-![Diagrama UML](uml.png)
-
-7. Como Executar
-7.1 Pré-requisitos
+6. Como Executar
+6.1 Pré-requisitos
 
 Python 3 instalado
 
-7.2 Execução
+6.2 Execução
 
 No terminal, dentro da pasta do projeto:
 
 python main.py
 
-8. Exemplo de Saída
+7. Exemplo de Saída
 Reserva criada com sucesso.
 Reserva #1 - Hóspede: Guilherme - Quarto 301 - Total: R$ 550.00
 
-9. Autor
+8. Autor
 
 Guilherme Guimarães Audibert
 Ciência da Computação – 3º Semestre
