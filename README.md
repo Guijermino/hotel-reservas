@@ -65,8 +65,6 @@ quarto = FabricaQuartos.criar_quarto("luxo", 301)
 
 6. Diagrama UML
 
-Caso adicione a imagem ao repositório, use:
-
 ![Diagrama UML](uml.png)
 
 7. Como Executar
