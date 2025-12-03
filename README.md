@@ -1,84 +1,83 @@
-Sistema de Reservas de Hotel
+# Sistema de Reservas de Hotel
 
-Este projeto implementa um sistema de gerenciamento de reservas utilizando Programação Orientada a Objetos (POO) e padrões de projeto. Ele foi desenvolvido para a disciplina Técnicas de Orientação a Objetos (TOO).
+Este projeto implementa um sistema de gerenciamento de reservas utilizando Programação Orientada a Objetos (POO) e padrões de projeto.  
+Ele foi desenvolvido para a disciplina Técnicas de Orientação a Objetos (TOO).
 
-1. Objetivos do Projeto
+---
 
-Aplicar os pilares da Programação Orientada a Objetos
+## Objetivos do Projeto
 
-Implementar padrões de projeto (Factory Method e Singleton)
+- Aplicar os pilares da Programação Orientada a Objetos
+- Implementar padrões de projeto (Factory Method e Singleton)
+- Simular o fluxo de funcionamento de um hotel
+- Organizar o código seguindo boas práticas de modularização
 
-Simular o fluxo de funcionamento de um hotel
+---
 
-Organizar o código seguindo boas práticas de modularização
+## Tecnologias Utilizadas
 
-2. Tecnologias Utilizadas
+- Python 3.x
+- Programação Orientada a Objetos (POO)
+- UML
 
-Python 3.x
+---
 
-POO (Programação Orientada a Objetos)
+## Arquitetura do Sistema
 
-UML
-
-3. Arquitetura do Sistema
+```text
 hotel-reservas/
+│
 ├── model/
 │   ├── Quarto.py
-│   ├── QuartoSimples.py
 │   ├── QuartoBase.py
+│   ├── QuartoSimples.py
 │   ├── QuartoDeLuxo.py
 │   ├── Suite.py
 │   ├── Hospede.py
 │   └── Hotel.py
 │
 └── teste.py
-
-4. Pilares da POO
-4.1 Abstração
-
+Pilares da Programação Orientada a Objetos
+Abstração
 A classe Quarto representa um modelo genérico para qualquer tipo de quarto.
 
-4.2 Encapsulamento
-
+Encapsulamento
 Cada classe concentra seus atributos e métodos internos, organizando melhor a lógica do sistema.
 
-4.3 Herança
+Herança
+Os tipos de quartos (QuartoSimples, QuartoDuplo, QuartoDeLuxo, Suite) herdam da classe Quarto.
 
-Os tipos de quartos (QuartoSimples, QuartoDuplo, QuartoDeLuxo, Suite) herdam de Quarto.
+Polimorfismo
+Cada tipo de quarto implementa sua própria versão do método calcular_diaria().
 
-4.4 Polimorfismo
+Padrões de Projeto
+Singleton – Classe Hotel
+Garante que apenas uma instância da classe Hotel seja criada durante a execução do sistema.
 
-Cada tipo de quarto implementa sua própria versão de calcular_diaria().
-
-5. Padrões de Projeto
-5.1 Singleton – Classe Hotel
-
-Garante que apenas uma instância da classe Hotel seja criada.
-
+python
+Copiar código
 hotel = Hotel.obter_instancia()
+Factory Method – FabricaQuartos
+Responsável por criar objetos do tipo Quarto a partir de uma string identificadora.
 
-5.2 Factory Method – FabricaQuartos
-
-Responsável por criar objetos do tipo Quarto a partir de uma string:
-
+python
+Copiar código
 quarto = FabricaQuartos.criar_quarto("luxo", 301)
-
-6. Como Executar
-6.1 Pré-requisitos
-
+Como Executar
+Pré-requisitos
 Python 3 instalado
 
-6.2 Execução
+Execução
+No terminal, dentro da pasta do projeto, execute:
 
-No terminal, dentro da pasta do projeto:
-
+bash
+Copiar código
 python main.py
-
-7. Exemplo de Saída
+Exemplo de Saída
+nginx
+Copiar código
 Reserva criada com sucesso.
 Reserva #1 - Hóspede: Guilherme - Quarto 301 - Total: R$ 550.00
-
-8. Autor
-
+Autor
 Guilherme Guimarães Audibert
 Ciência da Computação – 3º Semestre
